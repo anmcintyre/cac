@@ -2,7 +2,7 @@ angular.module("cac", ['ngRoute', 'ngAnimate'])
 	.constant("CAC_COUNTRIES", "http://api.geonames.org/countryInfoJSON?formatted=true&lang=en&username=anmcintyre&style=full")
 	.constant("CAC_NEIGHBORS", "http://api.geonames.org/neighboursJSON?username=anmcintyre&geonameId=")
 	.constant("CAC_CAPITAL", "http://api.geonames.org/searchJSON?username=anmcintyre")
-	.run(function($rootScope, $location, $timeout){
+	.run(['$rootScope', '$location', '$timeout', function($rootScope, $location, $timeout){
 	    $rootScope.$on('$routeChangeError', function() {
         	$location.path("/error");
 	    });
@@ -14,8 +14,8 @@ angular.module("cac", ['ngRoute', 'ngAnimate'])
 	        	$rootScope.isLoading = false;
 	      	}, 5000);
 	    });	
-	})
-	.factory("cacCountryData", function($http, CAC_COUNTRIES) {
+	}])
+	.factory("cacCountryData", ['$http', 'CAC_COUNTRIES', function($http, CAC_COUNTRIES) {
 		return function(suffix){
 			return $http({
 				cache: true,
@@ -23,7 +23,7 @@ angular.module("cac", ['ngRoute', 'ngAnimate'])
 				url: CAC_COUNTRIES+suffix
 			})
 		}
-    })
+    }])
 	.factory('cacCountryNeighbors', ['$http', 'CAC_NEIGHBORS', function($http, CAC_NEIGHBORS) {
 		return function(geoNameId){
 			return $http({
