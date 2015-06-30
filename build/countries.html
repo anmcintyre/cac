@@ -1,0 +1,29 @@
+<section>
+<table class="countriesTable">
+	<thead>
+		<tr>
+			<th class="col1">Name</th>
+			<th class="col2">Country Code</th>
+			<th class="col3">Capital</th>
+			<th class="col4">Area in km2</th>
+			<th class="col5">Population</th>
+			<th class="col6">Continent</th>
+		</tr>
+	</thead>
+	<tbody class="animate-container">
+		<tr ng-repeat="country in countries" ng-click="goToDetails(country.countryCode)" class="animate-repeat">
+			<td class="right col1">{{ country.countryName }}</td>
+			<td class="col2">{{ country.countryCode }}</td>
+			<td class="col3">{{ country.capital }}</td>
+			<td class="right col4">{{ country.areaInSqKm | number}}</td>
+			<td class="right col5">{{ country.population | number }}</td>
+			<td class="col6">{{ country.continentName }}</td>
+		</tr>	
+	</tbody>
+</table>
+</section>
+<section class="center">
+	<div id="buttonDiv">
+		<button onclick="location.href='/#/'">Home</button>
+	</div>
+</section>

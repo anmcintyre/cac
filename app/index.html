@@ -3,15 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Countries & Capitals</title>
+	<!-- build:css ./combined.css -->
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- endbuild -->
 </head>
 <body>
 	<h1>Countries & Capitals</h1>
 	<hr />
 	<div ng-view ng-class="{loading: isLoading}"></div>
+	<!-- build:js ./combined.js -->
     <script type="text/javascript" src="bower_components/angular/angular.js"></script>
     <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>	
 	<script type="text/javascript" src="bower_components/angular-animate/angular-animate.js"></script>
 	<script type="text/javascript" src="index.js"></script>
+	<!-- endbuild -->
 </body>
 </html>

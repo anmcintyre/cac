@@ -1,0 +1,37 @@
+
+<section class="center">
+	<h2>{{ country.countryName }}</h2>
+	<span class="label">Continent:</span>
+	<span class="value">{{ country.continentName }}</span>
+
+	<span class="label">Population of Country:</span>
+	<span class="value">{{ country.population | number }}</span>
+
+	<span class="label">Area:</span>
+	<span class="value">{{ country.areaInSqKm | number }} square km</span>
+
+	<span class="label">Capital:</span>
+	<span class="value">{{ country.capital }}</span>
+
+	<span class="label">Population of Country:</span>
+	<span class="value">{{cityPopulation | number}}</span>
+
+	<span class="label">{{neighbors.length}} Neighbors:</span>
+	<span class="value">
+			<span ng-repeat="neighbor in neighbors" >
+				<a href="/#/countries/{{neighbor.countryCode}}/capital">{{neighbor.countryName}}</a>{{$last ? '' : ', '}}
+			</span>
+	</span>
+
+	<span class="label">Country Map:</span>
+	<span class="value"><img id='countryImage' ng-src="http://www.geonames.org/img/country/250/{{ country.countryCode.toUpperCase() }}.png" /></span>
+	
+	<span class="label">Country Flag:</span>
+	<span class="value"><img id='countryFlag'  ng-src="http://www.geonames.org/flags/x/{{ country.countryCode.toLowerCase() }}.gif" /></span>
+</section>
+<section class="center">
+	<div id="buttonDiv">
+		<button onclick="location.href='/#/'">Home</button>
+		<button onclick="location.href='/#/countries'">Browse Countries</button>	
+	</div>
+</section>
