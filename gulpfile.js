@@ -41,7 +41,7 @@ gulp.task('build', ['copy']);
 // connect
 gulp.task('connect', function() {
   connect.server({
-    root: 'build/'
+    root: 'app/'
   });
 });
 gulp.task('default', ['connect']);

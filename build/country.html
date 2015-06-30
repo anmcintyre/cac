@@ -19,7 +19,7 @@
 	<span class="label">{{neighbors.length}} Neighbors:</span>
 	<span class="value">
 			<span ng-repeat="neighbor in neighbors" >
-				<a href="/#/countries/{{neighbor.countryCode}}/capital">{{neighbor.countryName}}</a>{{$last ? '' : ', '}}
+				<a href="#/countries/{{neighbor.countryCode}}/capital">{{neighbor.countryName}}</a>{{$last ? '' : ', '}}
 			</span>
 	</span>
 
@@ -31,7 +31,7 @@
 </section>
 <section class="center">
 	<div id="buttonDiv">
-		<button onclick="location.href='/#/'">Home</button>
-		<button onclick="location.href='/#/countries'">Browse Countries</button>	
+		<button onclick="location.href='#/'">Home</button>
+		<button onclick="location.href='#/countries'">Browse Countries</button>	
 	</div>
 </section>
