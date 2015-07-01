@@ -34,12 +34,12 @@ angular.module("cac", ['ngRoute', 'ngAnimate'])
 		}	    
 	}])    
 	.factory('cacCountryCapital', ['$http', 'CAC_CAPITAL', function($http, CAC_CAPITAL){
-		return function(countryName, countryCode){
+		return function(capitalName, countryCode){
 			return $http({
 				cache: true,
 				method: "GET",
 				url: CAC_CAPITAL,
-				params: {name_equals: countryName,
+				params: {name_equals: capitalName,
 						 country: countryCode,
 						 featureCode: "PPLC"
 				}
